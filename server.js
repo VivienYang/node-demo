@@ -49,6 +49,7 @@ var server = http.createServer(function(request, response){
     response.end()
   }else{
     response.statusCode = 404
+    response.setHeader('Content-Type', 'text/plain;charset=utf-8')
     response.write('请检查下您的地址哦')
     response.end()
   }
