@@ -24,7 +24,18 @@ var server = http.createServer(function(request, response){
   if(path === '/'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write('<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Page Title</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" type="text/css" media="screen" href="style.css"><script src="main.js"></script></head><body><h1>欢迎来到我的首页</h1><p id="para1"></p></body></html>')
+    response.write('<!DOCTYPE html>'
+    +'<html><head>'
+    +'<meta charset="utf-8">'
+    +'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
+    +'<title>Page Title</title>'
+    +'<meta name="viewport" content="width=device-width, initial-scale=1">'
+    +'<link rel="stylesheet" type="text/css" media="screen" href="style.css">'
+    +'</head><body>'
+    +'<h1>欢迎来到我的首页</h1>'
+    +'<p id="para1"></p>'
+    +'<script src="main.js"></script>'
+    +'</body></html>')
     response.end()
   }else if(path === '/style.css'){
     response.statusCode = 200
@@ -34,7 +45,7 @@ var server = http.createServer(function(request, response){
   }else if(path === '/main.js'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/js;charset=utf-8')
-    response.write("document.getElementById('para1').innerHTML('欢迎来到我的首页')")
+    response.write("document.getElementById('para1').innerHTML='welcom to my page'")
     response.end()
   }else{
     response.statusCode = 404
